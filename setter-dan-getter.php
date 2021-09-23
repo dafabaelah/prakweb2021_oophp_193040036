@@ -3,17 +3,51 @@
 class Produk {
     private  $judul,
             $penulis,
-            $penerbit;
-
-    protected $diskon = 0;
-
-    private $harga;
+            $penerbit,
+            $harga,
+            $diskon;
     
     public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0) {
         $this->judul = $judul;
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
         $this->harga = $harga;
+    }
+
+    public function setJudul( $judul ) {
+        $this->judul = $judul;
+    }
+
+    public function getJudul() {
+        return $this->judul;
+    }
+
+    public function setPenulis( $penulis ) {
+        $this->penulis = $penulis;
+    }
+
+    public function getPenulis() {
+        return $this->penulis;
+    }
+
+    public function setPenerbit( $penerbit ) {
+        $this->penerbit = $penerbit;
+    }
+
+    public function getPenerbit() {
+        return $this->penerbit;
+    }
+
+    public function setDiskon( $diskon ) {
+        $this->diskon = $diskon;
+    }
+
+    public function getDiskon() {
+        return $this->diskon;
+    }
+
+    public function setHarga( $harga)  {
+        $this->$harga;
     }
 
     public function getHarga() {
@@ -65,10 +99,6 @@ class Game extends Produk {
 
         return $str;
     }
-
-    public function setDiskon( $diskon ) {
-        $this->diskon = $diskon;
-    }
 }
 
 class CetakInfoProduk {
@@ -91,4 +121,5 @@ $produk2->setDiskon(50);
 echo $produk2->getHarga();
 echo "<hr>";
 
-echo $produk1->judul;
+$produk1->setPenulis("Daffa Akhdan Fadhillah");
+echo $produk1->getPenulis();
