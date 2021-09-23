@@ -1,7 +1,7 @@
 <?php
 
 class Produk {
-    private $judul,
+    private  $judul,
             $penulis,
             $penerbit;
 
@@ -89,3 +89,6 @@ echo "<hr>";
 
 $produk2->setDiskon(50);
 echo $produk2->getHarga();
+echo "<hr>";
+
+echo $produk1->judul;
