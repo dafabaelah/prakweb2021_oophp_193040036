@@ -5,6 +5,8 @@ class Produk {
             $penulis,
             $penerbit;
 
+    protected $diskon = 0;
+
     private $harga;
     
     public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0) {
@@ -15,7 +17,7 @@ class Produk {
     }
 
     public function getHarga() {
-        return $this->harga;
+        return $this->harga - ($this->harga * $this->diskon / 100);
     }
     
     public function getLabel() {
@@ -63,6 +65,10 @@ class Game extends Produk {
 
         return $str;
     }
+
+    public function setDiskon( $diskon ) {
+        $this->diskon = $diskon;
+    }
 }
 
 class CetakInfoProduk {
@@ -80,4 +86,6 @@ echo "<br>";
 echo $produk2->getInfoProduk();
 echo "<hr>";
 
+
+$produk2->setDiskon(50);
 echo $produk2->getHarga();
